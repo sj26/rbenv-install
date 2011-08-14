@@ -4,7 +4,29 @@ A pretty thin wrapper around ruby-build for [rbenv](https://github.com/sstephens
 
 Put `bin/rbenv-install` in your `PATH` somewhere, then:
 
-    rbenv install
+    $ rbenv install
+
+You'll get something like:
+
+    Install a ruby using ruby-build, i.e.
+        rbenv install 1.9.2-p290
+    or, if so inclined, install all rubies:
+        rbenv install --all
+
+    Available rubies:
+    1.8.7-p352
+    1.9.2-p290
+    1.9.3-preview1
+    jruby-1.6.3
+    rbx-1.2.4
+    ree-1.8.7-2011.03
+
+Then:
+
+    $ rbenv install ree-1.8.7-2011.03
+    Downloading ... ...
+
+Hooray!
 
 ## License
 
