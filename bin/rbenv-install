@@ -1,0 +1,38 @@
+#!/usr/bin/env bash -e
+
+if ! which ruby-build > /dev/null
+then
+  echo "You must have ruby-build first." >&2
+  echo >&2
+  echo "Grab it from:" >&2
+  echo "    https://github.com/sstephenson/ruby-build" >&2
+
+  if which brew > /dev/null
+  then
+    echo "or install it with homebrew:" >&2
+    echo "    brew install ruby-build" >&2
+  fi
+
+  exit 1
+fi
+
+case "$1" in
+"" | "-h" | "--help")
+  echo "Install a ruby using ruby-build, i.e."
+  echo "    rbenv install 1.9.2-p290"
+  echo "or, if so inclined, install all rubies:"
+  echo "    rbenv install --all"
+  echo
+  echo "Available rubies:"
+  ruby-build --definitions
+  ;;
+"--all")
+  "$0" $(ruby-build --definitions)
+  ;;
+*)
+  for ruby in "$@"
+  do
+    ruby-build "$ruby" "~/.rbenv/versions/$ruby"
+  done
+  ;;
+esac
