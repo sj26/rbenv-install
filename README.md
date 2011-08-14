@@ -1,6 +1,6 @@
 # rbenv-install
 
-A pretty thin wrapper around ruby-build for [rbenv](https://github.com/sstephenson/rbenv).
+A pretty thin wrapper around [ruby-build](https://github.com/sstephenson/ruby-build) for [rbenv](https://github.com/sstephenson/rbenv) (you'll need both).
 
 Put `bin/rbenv-install` in your `PATH` somewhere, then:
 
