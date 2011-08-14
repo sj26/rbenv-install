@@ -32,7 +32,7 @@ case "$1" in
 *)
   for ruby in "$@"
   do
-    ruby-build "$ruby" "~/.rbenv/versions/$ruby"
+    ruby-build "$ruby" "$HOME/.rbenv/versions/$ruby"
   done
   ;;
 esac
